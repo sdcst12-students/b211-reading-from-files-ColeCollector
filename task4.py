@@ -13,6 +13,14 @@ Create a function that reads the specific value for a specific level and an armo
 """
 
 def target(lvl,ac):
+    filename = "task04.txt"
+    file = open(filename,"r")
+    table = file.read()
+    tabled = table.split(" ")
+
+
+    print(table)
+    
     return
 
 
