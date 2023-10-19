@@ -13,3 +13,23 @@ Apple Inc.
 Enter stock symbol: YANG
 No matches
 """
+
+
+def find():
+    name = (input("\nEnter a stock symbol: ")).upper()
+    lineData = open("task5.csv","r").read().split("\n")
+    newData = []
+    stocks = []
+    number = 0
+    for i in lineData:
+        x = i.split(",")
+        newData.append(x)
+    for i in newData:
+        if name in i[0]:
+            number +=1
+            stocks.append(i)
+    if number == 1:print((stocks[0][1]).replace('"', ""))
+    else: print(f"There are {number} stocks with that symbol")
+
+while True:
+    find()

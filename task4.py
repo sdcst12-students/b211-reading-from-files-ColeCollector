@@ -16,16 +16,18 @@ def target(lvl,ac):
     filename = "task04.txt"
     file = open(filename,"r")
     table = file.read()
-    tabled = table.split(" ")
+    table1 = table.split(" ")
+    table1 = table.split("\n")
 
+    table2 = []
+    for i in table1:
+        table2.append(table1[lvl].split(" "))
 
-    print(table)
-    
-    return
+    return int(table2[lvl][-ac+10])
 
 
 def tests():
-    assert target(3,7) == 23
+    assert target(3,7) == 12
     assert target(9,-1) == 17
     assert target(13,-10) == 20
 
